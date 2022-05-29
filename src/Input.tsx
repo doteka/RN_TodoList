@@ -8,7 +8,13 @@ import {
 import { theme } from "./theme";
 import PropTypes from "prop-types";
 
-const Input = ({ placeholder, value, onChangeText, onSubmitEditing }) => {
+const Input = ({
+  placeholder,
+  value,
+  onChangeText,
+  onSubmitEditing,
+  onBlur,
+}) => {
   //   const width = Dimensions.get("window").width;
   const width = useWindowDimensions().width;
   return (
@@ -23,7 +29,8 @@ const Input = ({ placeholder, value, onChangeText, onSubmitEditing }) => {
       value={value}
       onChangeText={onChangeText}
       onSubmitEditing={onSubmitEditing}
-      placeholderTextColor="#778bdd"
+      onBlur={onBlur}
+      placeholderTextColor="#0096c6"
       autoCapitalize="none"
       autoCorrect={false}
       returnKeyType="done"
@@ -38,6 +45,7 @@ Input.prototype = {
   value: PropTypes.string.isRequired,
   onchangeText: PropTypes.func.isRequired,
   onSubmitEditing: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 const Styles = StyleSheet.create({
