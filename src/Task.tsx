@@ -90,8 +90,8 @@ const Styles = StyleSheet.create({
   },
 });
 
-Task.proptypes = {
-  text: PropTypes.string.isRequired,
+Task.propTypes = {
+  item: PropTypes.object.isRequired,
   deleteTask: PropTypes.func.isRequired,
   toggleTask: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
